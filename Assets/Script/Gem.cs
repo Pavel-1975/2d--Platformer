@@ -7,7 +7,7 @@ public class Gem : MonoBehaviour
     {
         if (collision.TryGetComponent(out PlayerControler playerControler))
         {
-            playerControler.Collision();    
+            playerControler.GemCollision();    
             Destroy(gameObject);
         }
     }

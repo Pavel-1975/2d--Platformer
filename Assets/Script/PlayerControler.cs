@@ -38,7 +38,7 @@ public class PlayerControler : MonoBehaviour
     {
         _direction = _playerInput.Player.Move.ReadValue<Vector2>();
 
-        Flip(_direction);
+        RenderFlip(_direction);
         Animator(_direction);
         Move(_direction);
         OnJumpAnimation();
@@ -77,7 +77,7 @@ public class PlayerControler : MonoBehaviour
         }
     }
 
-    private void Flip(Vector2 direction)
+    private void RenderFlip(Vector2 direction)
     {
         if (direction.x > 0f)
         {
@@ -114,7 +114,7 @@ public class PlayerControler : MonoBehaviour
         }
     }
 
-    public void Collision()
+    public void GemCollision()
     {
         _uIScore.Score();
     }
