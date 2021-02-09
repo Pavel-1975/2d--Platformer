@@ -3,10 +3,21 @@ using UnityEngine;
 
 public class UILives : MonoBehaviour
 {
+    [SerializeField] private Player _player;
     [SerializeField] private TMP_Text _iives;
 
-    public void Lives(int live)
+    private void OnEnable()
     {
-        _iives.text = "Жизни: "+live.ToString();
+        _player.ScoreChangedLives += ShowLives;
+    }
+
+    private void OnDisable()
+    {
+        _player.ScoreChangedLives -= ShowLives;
+    }
+
+    private void ShowLives(int live)
+    {
+        _iives.text = "Жизни: " + live.ToString();
     }
 }

@@ -5,9 +5,9 @@ public class Gem : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out PlayerControler playerControler))
+        if (collision.TryGetComponent(out Player playerControler))
         {
-            playerControler.GemCollision();    
+            playerControler.GemCollision();
             Destroy(gameObject);
         }
     }

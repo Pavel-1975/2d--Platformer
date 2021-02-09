@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class WayPointMove : MonoBehaviour
 {
     [SerializeField] private Transform _path;
@@ -8,7 +9,7 @@ public class WayPointMove : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private Transform[] _points;
     private int _currentPoint;
-    
+
 
     private void Start()
     {

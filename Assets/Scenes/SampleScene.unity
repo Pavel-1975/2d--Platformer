@@ -725,6 +725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeec71f1c95cb4440b3f864e06c6dfe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 2129658918}
   _iives: {fileID: 675189203}
 --- !u!1 &831996489
 GameObject:
@@ -873,6 +874,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c58712b8396f6243ba59aaf65c54493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 2129658918}
   _score: {fileID: 831996491}
 --- !u!1 &843578024
 GameObject:
@@ -886,7 +888,7 @@ GameObject:
   - component: {fileID: 843578026}
   - component: {fileID: 843578027}
   m_Layer: 0
-  m_Name: GroundCheck
+  m_Name: CheckGround
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1530,6 +1532,7 @@ GameObject:
   - component: {fileID: 2129658916}
   - component: {fileID: 2129658918}
   - component: {fileID: 2129658915}
+  - component: {fileID: 2129658919}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1681,9 +1684,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c8c8e48f2b3d942a766f46e2e53d9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 400
-  _tapForce: 6
   _checkGround: {fileID: 843578027}
-  _uIScore: {fileID: 831996493}
-  _uILives: {fileID: 675189205}
+  _speed: 400
+  _heightOfJump: 7
   lives: 6
+--- !u!114 &2129658919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129658912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad0503edf830d9f40a448393f82e5e6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _checkGround: {fileID: 843578027}

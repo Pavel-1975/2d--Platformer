@@ -4,9 +4,9 @@ public class Enemy : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out PlayerControler playerControler))
+        if (collision.TryGetComponent(out Player player))
         {
-            playerControler.LivesCollision();
+            player.EnemyCollision();
         }
     }
 }
