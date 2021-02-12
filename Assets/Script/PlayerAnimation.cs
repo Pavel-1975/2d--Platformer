@@ -1,18 +1,18 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
-[RequireComponent(typeof(Player))]
+[RequireComponent(typeof(MovePlayer))]
 public class PlayerAnimation : MonoBehaviour
 {
     [SerializeField] private CheckGround _checkGround;
 
-    private Player _player;
+    private MovePlayer _player;
     private Animator _animator;
 
     private void Start()
     {
         _animator = GetComponent<Animator>();
-        _player = GetComponent<Player>();
+        _player = GetComponent<MovePlayer>();
     }
 
     private void Update()

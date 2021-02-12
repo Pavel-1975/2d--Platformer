@@ -4,11 +4,11 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(PlayerAnimation))]
-public class Player : MonoBehaviour
+public class MovePlayer : MonoBehaviour
 {
     [SerializeField] private CheckGround _checkGround;
     [SerializeField] private float _heightOfJump = 7;
-    [SerializeField] private float _speed;
+    [SerializeField] private float _speed = 10;
     [SerializeField] private int lives = 3;
 
     private SpriteRenderer _spriteRenderer;
@@ -27,7 +27,10 @@ public class Player : MonoBehaviour
         _playerInput = new PlayerInput();
 
         _playerInput.Player.Jump.performed += ctx => OnJump();
+    }
 
+    private void Start()
+    {
         _rigidbody = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -46,7 +49,7 @@ public class Player : MonoBehaviour
     {
         if (_checkGround.OnGround)
         {
-            _rigidbody.AddForce(new Vector3(direction.x, 0, 0) * _speed * Time.deltaTime, ForceMode2D.Force);
+            _rigidbody.AddForce(new Vector3(direction.x, 0, 0) * _speed * Time.deltaTime, ForceMode2D.Impulse);
         }
     }
 
@@ -85,7 +88,7 @@ public class Player : MonoBehaviour
         _playerInput.Disable();
     }
 
-    public void EnemyCollision()
+    public void CollideEnemy()
     {
         if (lives > 0)
         {
@@ -93,7 +96,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void GemCollision()
+    public void TakeGem()
     {
         ScoreChangedGem?.Invoke(++_gemCout);
     }

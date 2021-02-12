@@ -3,7 +3,7 @@ using TMPro;
 
 public class UIScore : MonoBehaviour
 {
-    [SerializeField] private Player _player;
+    [SerializeField] private MovePlayer _player;
     [SerializeField] private TMP_Text _score;
 
     private void OnEnable()
